@@ -4,6 +4,16 @@ using System;
 
 public class AudioManager : MonoBehaviour
 {
+    /*Audio Manager:
+     * Keeps track of all audio in the game
+     * 
+     * Referenced video tutorial: https://youtu.be/6OT43pvUyfY
+     * Tutorial by: Brackeys
+     * 
+     * Updated by: PikaChiNyaaa
+     * Date: 7 Nov 2023
+     */
+
     private static AudioManager _singleton;
     public static AudioManager Singleton
     {
@@ -99,4 +109,22 @@ public class AudioManager : MonoBehaviour
         Play("MAIN_BGM");
     }
 
+}
+
+[System.Serializable]
+public class Sound
+{
+    public string name;
+
+    public AudioClip clip;
+
+    [Range(0f, 1f)]
+    public float volume = 1f;
+    [Range(.1f, 3f)]
+    public float pitch = 1f;
+
+    public bool loop;
+
+    [HideInInspector]
+    public AudioSource source;
 }

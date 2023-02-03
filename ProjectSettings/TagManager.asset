@@ -41,9 +41,18 @@ TagManager:
   - name: Background
     uniqueID: 2212284273
     locked: 0
+  - name: Garden
+    uniqueID: 575845419
+    locked: 0
+  - name: Plants
+    uniqueID: 2316745539
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
   - name: Foreground
     uniqueID: 3975183491
+    locked: 0
+  - name: Decoration
+    uniqueID: 1002082139
     locked: 0

@@ -7,6 +7,14 @@ using UnityEngine.UIElements;
 
 public class CameraControls : MonoBehaviour
 {
+    /* Camera Control:
+     * Keeps track of where the camera is looking at
+     * Moves the camera depending on which direction the player wants to go
+     * 
+     * Script by: PikaChiNyaaa
+     * Date: 3 Feb 2023
+     */
+
     public enum DIRECTIONS
     {
         UP = 0,
@@ -34,7 +42,7 @@ public class CameraControls : MonoBehaviour
         {
             controlsUpdated = true;
 
-            if (currPt.Up != null)
+            if (currPt.roomDir.Up != null)
             {
                 btnParent.transform.GetChild((int)DIRECTIONS.UP).gameObject.SetActive(true);
             }
@@ -43,7 +51,7 @@ public class CameraControls : MonoBehaviour
                 btnParent.transform.GetChild((int)DIRECTIONS.UP).gameObject.SetActive(false);
             }
 
-            if (currPt.Down != null)
+            if (currPt.roomDir.Down != null)
             {
                 btnParent.transform.GetChild((int)DIRECTIONS.DOWN).gameObject.SetActive(true);
             }
@@ -52,7 +60,7 @@ public class CameraControls : MonoBehaviour
                 btnParent.transform.GetChild((int)DIRECTIONS.DOWN).gameObject.SetActive(false);
             }
 
-            if (currPt.Left != null)
+            if (currPt.roomDir.Left != null)
             {
                 btnParent.transform.GetChild((int)DIRECTIONS.LEFT).gameObject.SetActive(true);
             }
@@ -61,7 +69,7 @@ public class CameraControls : MonoBehaviour
                 btnParent.transform.GetChild((int)DIRECTIONS.LEFT).gameObject.SetActive(false);
             }
 
-            if (currPt.Right != null)
+            if (currPt.roomDir.Right != null)
             {
                 btnParent.transform.GetChild((int)DIRECTIONS.RIGHT).gameObject.SetActive(true);
             }
@@ -78,20 +86,20 @@ public class CameraControls : MonoBehaviour
         switch ((DIRECTIONS)dir)
         {
             case DIRECTIONS.UP:
-                _camera.Follow = currPt.Up.transform;
-                currPt = GetCameraPoint(currPt.Up.name);
+                _camera.Follow = currPt.roomDir.Up.transform;
+                currPt = GetCameraPoint(currPt.roomDir.Up.name);
                 break;
             case DIRECTIONS.DOWN:
-                _camera.Follow = currPt.Down.transform;
-                currPt = GetCameraPoint(currPt.Down.name);
+                _camera.Follow = currPt.roomDir.Down.transform;
+                currPt = GetCameraPoint(currPt.roomDir.Down.name);
                 break;
             case DIRECTIONS.LEFT:
-                _camera.Follow = currPt.Left.transform;
-                currPt = GetCameraPoint(currPt.Left.name);
+                _camera.Follow = currPt.roomDir.Left.transform;
+                currPt = GetCameraPoint(currPt.roomDir.Left.name);
                 break;
             case DIRECTIONS.RIGHT:
-                _camera.Follow = currPt.Right.transform;
-                currPt = GetCameraPoint(currPt.Right.name);
+                _camera.Follow = currPt.roomDir.Right.transform;
+                currPt = GetCameraPoint(currPt.roomDir.Right.name);
                 break;
         }
     }
@@ -105,4 +113,24 @@ public class CameraControls : MonoBehaviour
         }
         return null;
     }
+}
+
+[System.Serializable]
+public class CameraPoint
+{
+    public GameObject cameraPoint;
+    public RoomDirectory roomDir;
+}
+
+[System.Serializable]
+public struct RoomDirectory
+{
+    [Tooltip("Camera Point above")]
+    public GameObject Up;
+    [Tooltip("Camera Point below")]
+    public GameObject Down;
+    [Tooltip("Camera Point on the left")]
+    public GameObject Left;
+    [Tooltip("Camera Point on the right")]
+    public GameObject Right;
 }
