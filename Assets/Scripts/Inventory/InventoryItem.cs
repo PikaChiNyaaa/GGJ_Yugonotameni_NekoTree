@@ -14,6 +14,7 @@ public class InventoryItem : ScriptableObject
 
     public Sprite icon;
 
+    [Tooltip("Price of the Item in the Shop")]
     public int price;
 
     //Can be null
