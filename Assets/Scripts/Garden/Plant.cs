@@ -2,21 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Plant : MonoBehaviour
+[CreateAssetMenu(fileName = "New Plant", menuName = "Plant")]
+public class Plant : ScriptableObject
 {
-    []
-    public string plantType;
+    public new string name;
+    public string description;
 
+    public int price;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public PlantStateSet plantStateSet;
+}
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+[System.Serializable]
+public struct PlantStateSet
+{
+    public PlantState seed;
+    public PlantState growing;
+    public PlantState grown;
+}
+
+[System.Serializable]
+public struct PlantState
+{
+    public Sprite stateImage;
+    [Tooltip("Time before the plant changes into its next state")]
+    public float time;
 }

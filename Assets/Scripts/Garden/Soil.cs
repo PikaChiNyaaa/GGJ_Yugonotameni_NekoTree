@@ -4,5 +4,10 @@ using UnityEngine;
 
 public class Soil : MonoBehaviour
 {
-    public 
+    public Plant plant { get; private set; }
+
+    public bool isWatered { get; private set; }
+    public bool isPlowed { get; private set; }
+
+
 }

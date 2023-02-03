@@ -1,5 +1,9 @@
+using JetBrains.Annotations;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
+using UnityEditor;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Inventory Item", menuName = "Inventory Item")]
@@ -10,7 +14,9 @@ public class InventoryItem : ScriptableObject
 
     public Sprite icon;
 
-    public float price = 0;
+    public int price;
 
+    //Can be null
+    public Plant plant;
 
 }
