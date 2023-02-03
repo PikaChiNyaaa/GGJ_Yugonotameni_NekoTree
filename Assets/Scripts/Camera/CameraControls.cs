@@ -25,7 +25,7 @@ public class CameraControls : MonoBehaviour
     private void Start()
     {
         controlsUpdated = false;
-        currPt = GetCameraPoint("LivingRoom");
+        currPt = cameraPoints[0];
     }
 
     private void Update()
