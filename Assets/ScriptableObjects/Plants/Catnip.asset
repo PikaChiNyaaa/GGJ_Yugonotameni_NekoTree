@@ -15,14 +15,16 @@ MonoBehaviour:
   name: Catnip
   description: 
   plantStateSet:
-    seed:
-      stateImage: {fileID: 0}
-      time: 0
+    seedling:
+      stateImage: {fileID: -2057100177, guid: 202baf0249244dc48b829c9bd6c41868, type: 3}
+      time: 300
     growing:
-      stateImage: {fileID: 0}
-      time: 0
+      stateImage: {fileID: 879727950, guid: 202baf0249244dc48b829c9bd6c41868, type: 3}
+      time: 200
     grown:
-      stateImage: {fileID: 0}
-      time: 0
+      stateImage: {fileID: -1531111893, guid: 202baf0249244dc48b829c9bd6c41868, type: 3}
+      time: 100
   crops:
   - {fileID: 11400000, guid: a8313803acbe78949bd9558d9f88999b, type: 2}
+  minRange: 1
+  maxRange: 6

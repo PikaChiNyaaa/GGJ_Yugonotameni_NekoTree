@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5162821d6e5c55940924ac0035c65480, type: 3}
   m_Name: CatnipSeeds
   m_EditorClassIdentifier: 
-  name: SeedPacks
+  name: CatnipSeeds
   description: 10
   icon: {fileID: 21300000, guid: c78dd35235d1a4d4a912878d926811fc, type: 3}
   price: 5

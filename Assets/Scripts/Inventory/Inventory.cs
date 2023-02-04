@@ -13,6 +13,7 @@ public class Inventory : MonoBehaviour
     [SerializeField] TextMeshProUGUI MoneyText;
 
     public int Money { get; private set; }
+    public Item InHand { get; private set; }
 
     // Dictionary for Each Item and number of items
     public Dictionary<Item, InventorySlot> Items;
@@ -70,7 +71,7 @@ public class Inventory : MonoBehaviour
             Items[item].countText.text = "99+";
     }
 
-    public bool Remove(Item item, int num)
+    public bool Remove(int num, Item item = null, string itemName = "")
     {
         /* Returns true if the item has been successfully removed
          * 
@@ -79,22 +80,63 @@ public class Inventory : MonoBehaviour
          * - Item is not in the inventory
          */
 
-        if (Items.ContainsKey(item))
+        if (item != null)
         {
-            int remainder = Items[item].count - num;
+            if (Items.ContainsKey(item))
+            {
+                int remainder = Items[item].count - num;
 
-            if (remainder < 0)
-                return false;
-            else if (remainder == 0)
-            {
-                Destroy(Items[item].obj);
-                Items.Remove(item);
+                if (remainder < 0)
+                    return false;
+                else if (remainder == 0)
+                {
+                    Destroy(Items[item].obj);
+                    Items.Remove(item);
+                }
+                else if (remainder > 0)
+                {
+                    Items[item].count = remainder;
+
+                    if (Items[item].count <= 100)
+                        Items[item].countText.text = Items[item].count.ToString();
+                    else
+                        Items[item].countText.text = "99+";
+                }
+
+                return true;
             }
-            else if (remainder > 0)
+        }
+        else
+        {
+            if (itemName != "")
             {
-                Items[item].count = remainder;
+                foreach(KeyValuePair<Item, InventorySlot> i in Items)
+                {
+                    if (i.Key.name == itemName)
+                    {
+                        item = i.Key;
+                        int remainder = i.Value.count - num;
+
+                        if (remainder < 0)
+                            return false;
+                        else if (remainder == 0)
+                        {
+                            Destroy(i.Value.obj);
+                            Items.Remove(item);
+                        }
+                        else if (remainder > 0)
+                        {
+                            i.Value.count = remainder;
+
+                            if (Items[item].count <= 100)
+                                Items[item].countText.text = Items[item].count.ToString();
+                            else
+                                Items[item].countText.text = "99+";
+                        }
+                        return true;
+                    }    
+                }
             }
-            return true;
         }
         return false;
     }
