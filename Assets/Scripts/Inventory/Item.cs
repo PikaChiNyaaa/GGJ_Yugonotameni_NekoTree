@@ -17,6 +17,8 @@ public class Item : ScriptableObject
 
     [Tooltip("Price of the Item in the Shop")]
     public int price;
+    [Tooltip("Number of this item per price")]
+    public int quantity = 1;
 
     //Can be null
     public Plant plant;

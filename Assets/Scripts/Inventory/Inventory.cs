@@ -10,6 +10,9 @@ public class Inventory : MonoBehaviour
     public static Inventory Instance { get; private set; }
 
     [SerializeField] GameObject SlotPrefab, SlotParent;
+    [SerializeField] TextMeshProUGUI MoneyText;
+
+    public int Money { get; private set; }
 
     // Dictionary for Each Item and number of items
     public Dictionary<Item, InventorySlot> Items;
@@ -34,6 +37,12 @@ public class Inventory : MonoBehaviour
     private void Start()
     {
         Items = new();
+        Money = 10;
+    }
+
+    private void Update()
+    {
+        MoneyText.text = "$" + Money.ToString();
     }
 
     public void Add(Item item, int num)
@@ -44,8 +53,10 @@ public class Inventory : MonoBehaviour
         }
         else
         {
-            InventorySlot slot = new InventorySlot();
-            slot.obj = Instantiate(SlotPrefab, SlotParent.transform);
+            InventorySlot slot = new()
+            {
+                obj = Instantiate(SlotPrefab, SlotParent.transform)
+            };
             slot.obj.transform.Find("Icon").GetComponent<Image>().sprite = item.icon;
             slot.countText = slot.obj.transform.Find("Count").GetComponentInChildren<TextMeshProUGUI>();
             slot.count = num;
@@ -86,6 +97,19 @@ public class Inventory : MonoBehaviour
             return true;
         }
         return false;
+    }
+
+    public bool PayMoney(int amount)
+    {
+        /* Returns true if player has enough money*/
+
+        if (Money >= amount)
+        {
+            Money -= amount;
+            return true;
+        }
+        else
+            return false;
     }
 }
 

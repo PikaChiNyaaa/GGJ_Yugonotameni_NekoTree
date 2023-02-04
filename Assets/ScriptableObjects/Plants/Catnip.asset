@@ -10,8 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0df3fa0bf1955c448b0b985a48ea1ff8, type: 3}
-  m_Name: Plant
+  m_Name: Catnip
   m_EditorClassIdentifier: 
-  name: 
+  name: Catnip
   description: 
-  price: 0
+  plantStateSet:
+    seed:
+      stateImage: {fileID: 0}
+      time: 0
+    growing:
+      stateImage: {fileID: 0}
+      time: 0
+    grown:
+      stateImage: {fileID: 0}
+      time: 0
+  crops:
+  - {fileID: 11400000, guid: a8313803acbe78949bd9558d9f88999b, type: 2}
