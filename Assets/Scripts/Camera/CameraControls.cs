@@ -34,6 +34,7 @@ public class CameraControls : MonoBehaviour
     {
         controlsUpdated = false;
         currPt = cameraPoints[0];
+        _camera.Follow = currPt.cameraPoint.transform;
     }
 
     private void Update()
