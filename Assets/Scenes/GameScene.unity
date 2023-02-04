@@ -10933,9 +10933,15 @@ MonoBehaviour:
   shopItems:
   - {fileID: 11400000, guid: a3feb0ad0d8386e4190d8ba34710c508, type: 2}
   roomBtnList:
-  - {fileID: 0}
+  - {fileID: 1326930328}
+  - {fileID: 1711415642}
+  - {fileID: 2089408062}
+  - {fileID: 2054879185}
   roomList:
-  - {fileID: 0}
+  - {fileID: 1183963835}
+  - {fileID: 1190537086}
+  - {fileID: 1429983012}
+  - {fileID: 442304670}
 --- !u!1 &1035543723
 GameObject:
   m_ObjectHideFlags: 0
@@ -12557,7 +12563,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1326930331}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 984424971}
+        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+        m_MethodName: BuyRoom
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1326930331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19669,7 +19687,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1711415645}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 984424971}
+        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+        m_MethodName: BuyRoom
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1711415645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21926,7 +21956,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2054879188}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 984424971}
+        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+        m_MethodName: BuyRoom
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2054879188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22048,7 +22090,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2089408065}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 984424971}
+        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+        m_MethodName: BuyRoom
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2089408065
 MonoBehaviour:
   m_ObjectHideFlags: 0

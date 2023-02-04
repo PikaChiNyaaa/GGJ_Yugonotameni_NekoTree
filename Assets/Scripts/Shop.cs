@@ -26,14 +26,16 @@ public class Shop : MonoBehaviour
 
     public void BuyRoom(int roomNum)
     {
+        roomNum -= 2;
+
         // Rooms for sale start from room 2
 
-        if (roomNum >= 2 && roomNum <= 3)
+        if (roomNum >= 0 && roomNum <= 4)
         {
-            if (Inventory.Instance.PayMoney(roomPrices[roomNum - 2]))
+            if (Inventory.Instance.PayMoney(roomPrices[roomNum]))
             {
-                roomList[roomNum - 2].SetActive(true);
-                roomBtnList[roomNum - 2].SetActive(true);
+                roomList[roomNum].SetActive(true);
+                roomBtnList[roomNum].SetActive(false);
             }
         }
     }
