@@ -11,7 +11,7 @@ public class AudioManager : MonoBehaviour
      * Tutorial by: Brackeys
      * 
      * Updated by: PikaChiNyaaa
-     * Date: 7 Nov 2023
+     * Date: 7 Nov 2022
      */
 
     private static AudioManager _singleton;

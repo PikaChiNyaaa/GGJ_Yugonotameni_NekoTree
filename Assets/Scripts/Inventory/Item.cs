@@ -7,7 +7,8 @@ using UnityEditor;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Inventory Item", menuName = "Inventory Item")]
-public class InventoryItem : ScriptableObject
+[System.Serializable]
+public class Item : ScriptableObject
 {
     public new string name;
     public string description;

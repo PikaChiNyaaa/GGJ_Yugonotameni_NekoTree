@@ -8,10 +8,8 @@ public class Plant : ScriptableObject
     public new string name;
     public string description;
 
-    [Tooltip("Price of the plant's crop")]
-    public int price;
-
     public PlantStateSet plantStateSet;
+    public List<Item> crops = new();
 }
 
 [System.Serializable]
