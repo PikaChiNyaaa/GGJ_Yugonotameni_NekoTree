@@ -153,6 +153,26 @@ public class Inventory : MonoBehaviour
         else
             return false;
     }
+
+    public void SellCatnip(int slotIndex)
+    {
+        int index = -1;
+        foreach(KeyValuePair<Item, InventorySlot> item in Items)
+        {
+            index++;
+            if (index == slotIndex)
+            {
+                if (item.Key.name == "Catnip")
+                {
+                    if (Remove(1, null, "Catnip"))
+                    {
+                        Money += 5;
+                        break;
+                    }
+                }
+            }
+        }
+    }
 }
 
 

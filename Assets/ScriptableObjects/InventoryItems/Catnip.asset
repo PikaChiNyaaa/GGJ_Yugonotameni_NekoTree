@@ -15,6 +15,6 @@ MonoBehaviour:
   name: Catnip
   description: 
   icon: {fileID: -1531111893, guid: 202baf0249244dc48b829c9bd6c41868, type: 3}
-  price: 20
+  price: 5
   quantity: 3
   plant: {fileID: 0}
