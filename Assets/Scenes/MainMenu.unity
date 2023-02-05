@@ -1066,6 +1066,96 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 904695935}
   m_CullTransparentMesh: 1
+--- !u!1 &988715336
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 988715338}
+  - component: {fileID: 988715337}
+  - component: {fileID: 988715339}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &988715337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 988715336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37eb7eb174f85aa4ab91d1815df9e21b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundList:
+  - name: MAIN_BGM
+    clip: {fileID: 8300000, guid: 862177d9310576a4985ef935fbbab857, type: 3}
+    volume: 0.402
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Meow
+    clip: {fileID: 8300000, guid: 33703c2ce834c3445960fe5f1b278e71, type: 3}
+    volume: 0.212
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Money
+    clip: {fileID: 8300000, guid: c6b1209d1670b6a47a471ad89617f484, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Planting
+    clip: {fileID: 8300000, guid: 419225bec97868845aa7554c72f083ce, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Plucking
+    clip: {fileID: 8300000, guid: 8fe3dfbc73c49f244bd8dbb319938388, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Watering
+    clip: {fileID: 8300000, guid: 13a6db524eee2f644a7256f8e4a59f3c, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+--- !u!4 &988715338
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 988715336}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 445.51462, y: 278.00714, z: -1.8887947}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!81 &988715339
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 988715336}
+  m_Enabled: 1
 --- !u!1 &1065739764
 GameObject:
   m_ObjectHideFlags: 0
@@ -1333,7 +1423,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1245933630}
   - component: {fileID: 1245933629}
-  - component: {fileID: 1245933628}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1341,14 +1430,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1245933628
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1245933627}
-  m_Enabled: 1
 --- !u!20 &1245933629
 Camera:
   m_ObjectHideFlags: 0

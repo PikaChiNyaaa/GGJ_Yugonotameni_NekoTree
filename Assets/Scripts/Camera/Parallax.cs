@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class Parallax : MonoBehaviour
 {
+    /*Parallax:
+     * Cool Parallax Background Effect
+     * 
+     * Referenced video tutorial: https://www.youtube.com/watch?v=zit45k6CUMk
+     * Tutorial by: Dani
+     */
+
     [SerializeField] float parallaxEffect;
 
     private float length, startPos;

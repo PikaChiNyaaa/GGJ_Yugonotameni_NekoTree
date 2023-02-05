@@ -30,6 +30,8 @@ public class Plot : MonoBehaviour
         {
             if(Inventory.Instance.Remove(1, null, "CatnipSeeds"))
             {
+                AudioManager.Singleton.Play("Planting");
+
                 plant = catnip;
                 plot.plantStates.seedling.SetActive(true);
                 currPlantState = Plant.PLANT_STATE_TYPE.SEEDLING;
@@ -45,6 +47,7 @@ public class Plot : MonoBehaviour
                 int cropYield = UnityEngine.Random.Range(plant.minRange, plant.maxRange);
                 Inventory.Instance.Add(crop, cropYield);
             }
+            AudioManager.Singleton.Play("Plucking");
             plot.plantStates.grown.SetActive(false);
             plot.alertIcon.alertIcon.SetActive(false);
             plot.alertIcon.harvestIcon.SetActive(false);
@@ -54,6 +57,7 @@ public class Plot : MonoBehaviour
         else if (plant != null && !isWatered)
         {
             isWatered = true;
+            AudioManager.Singleton.Play("Watering");
             plot.wetSoil.SetActive(true);
             plot.alertIcon.alertIcon.SetActive(false);
             plot.alertIcon.waterIcon.SetActive(false);

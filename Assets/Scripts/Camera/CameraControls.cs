@@ -84,6 +84,7 @@ public class CameraControls : MonoBehaviour
     public void MoveToCameraPoint(int dir)
     {
         controlsUpdated = false;
+        AudioManager.Singleton.Play("Meow");
         switch ((DIRECTIONS)dir)
         {
             case DIRECTIONS.UP:

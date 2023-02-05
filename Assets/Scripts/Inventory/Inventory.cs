@@ -148,6 +148,7 @@ public class Inventory : MonoBehaviour
         if (Money >= amount)
         {
             Money -= amount;
+            AudioManager.Singleton.Play("Money");
             return true;
         }
         else
@@ -167,6 +168,7 @@ public class Inventory : MonoBehaviour
                     if (Remove(1, null, "Catnip"))
                     {
                         Money += 5;
+                        AudioManager.Singleton.Play("Money");
                         break;
                     }
                 }
