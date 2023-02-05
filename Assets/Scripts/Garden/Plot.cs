@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -33,6 +34,8 @@ public class Plot : MonoBehaviour
                 plot.plantStates.seedling.SetActive(true);
                 currPlantState = Plant.PLANT_STATE_TYPE.SEEDLING;
                 currTimeLapse = -1;
+                plot.alertIcon.alertIcon.SetActive(true);
+                plot.alertIcon.waterIcon.SetActive(true);
             }
         }
         else if (currPlantState == Plant.PLANT_STATE_TYPE.GROWN)
@@ -43,12 +46,17 @@ public class Plot : MonoBehaviour
                 Inventory.Instance.Add(crop, cropYield);
             }
             plot.plantStates.grown.SetActive(false);
+            plot.alertIcon.alertIcon.SetActive(false);
+            plot.alertIcon.harvestIcon.SetActive(false);
             plant = null;
 
         }
         else if (plant != null && !isWatered)
         {
             isWatered = true;
+            plot.wetSoil.SetActive(true);
+            plot.alertIcon.alertIcon.SetActive(false);
+            plot.alertIcon.waterIcon.SetActive(false);
 
             switch (currPlantState)
             {
@@ -75,17 +83,22 @@ public class Plot : MonoBehaviour
             else if (currTimeLapse <= 0 && currPlantState != Plant.PLANT_STATE_TYPE.GROWN)
             {
                 isWatered = false;
+                plot.wetSoil.SetActive(false);
 
                 switch (currPlantState)
                 {
                     case Plant.PLANT_STATE_TYPE.SEEDLING:
                         plot.plantStates.seedling.SetActive(false);
                         plot.plantStates.growing.SetActive(true);
+                        plot.alertIcon.alertIcon.SetActive(true);
+                        plot.alertIcon.waterIcon.SetActive(true);
                         currPlantState = Plant.PLANT_STATE_TYPE.GROWING;
                         break;
                     case Plant.PLANT_STATE_TYPE.GROWING:
                         plot.plantStates.growing.SetActive(false);
                         plot.plantStates.grown.SetActive(true);
+                        plot.alertIcon.alertIcon.SetActive(true);
+                        plot.alertIcon.harvestIcon.SetActive(true);
                         currPlantState = Plant.PLANT_STATE_TYPE.GROWN;
                         break;
 
@@ -102,7 +115,7 @@ public struct PlotParts
     public GameObject soil;
     public GameObject wetSoil;
     public PlantStateObjs plantStates;
-
+    public AlertIcon alertIcon;
 }
 
 [System.Serializable]
@@ -111,4 +124,12 @@ public struct PlantStateObjs
     public GameObject seedling;
     public GameObject growing;
     public GameObject grown;
+}
+
+[System.Serializable]
+public struct AlertIcon
+{
+    public GameObject alertIcon;
+    public GameObject waterIcon;
+    public GameObject harvestIcon;
 }
