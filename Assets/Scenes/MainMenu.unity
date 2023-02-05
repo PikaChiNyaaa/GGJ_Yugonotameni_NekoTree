@@ -1109,6 +1109,12 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: MeowNPC
+    clip: {fileID: 8300000, guid: 9afb9c98996d81c4ab749e3264a19032, type: 3}
+    volume: 0.249
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
   - name: Money
     clip: {fileID: 8300000, guid: c6b1209d1670b6a47a471ad89617f484, type: 3}
     volume: 0.5

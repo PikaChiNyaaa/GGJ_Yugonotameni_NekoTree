@@ -34,6 +34,7 @@ public class Shop : MonoBehaviour
         {
             if (Inventory.Instance.PayMoney(roomPrices[roomNum]))
             {
+                AudioManager.Singleton.Play("MeowNPC");
                 roomList[roomNum].SetActive(true);
                 roomBtnList[roomNum].SetActive(false);
             }

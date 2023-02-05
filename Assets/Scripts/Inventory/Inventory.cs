@@ -38,7 +38,7 @@ public class Inventory : MonoBehaviour
     private void Start()
     {
         Items = new();
-        Money = 100000;
+        Money = 15;
     }
 
     private void Update()
