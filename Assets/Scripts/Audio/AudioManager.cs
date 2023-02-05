@@ -25,7 +25,7 @@ public class AudioManager : MonoBehaviour
             else if (_singleton != value)
             {
                 Debug.Log($"{nameof(AudioManager)} instance already exists, destroying duplicate!");
-                Destroy(value);
+                Destroy(value.gameObject);
             }
         }
     }
