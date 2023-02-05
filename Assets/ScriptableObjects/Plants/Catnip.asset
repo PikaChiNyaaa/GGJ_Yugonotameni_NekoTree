@@ -17,13 +17,13 @@ MonoBehaviour:
   plantStateSet:
     seedling:
       stateImage: {fileID: -2057100177, guid: 202baf0249244dc48b829c9bd6c41868, type: 3}
-      time: 300
+      time: 20
     growing:
       stateImage: {fileID: 879727950, guid: 202baf0249244dc48b829c9bd6c41868, type: 3}
-      time: 200
+      time: 5
     grown:
       stateImage: {fileID: -1531111893, guid: 202baf0249244dc48b829c9bd6c41868, type: 3}
-      time: 100
+      time: 0
   crops:
   - {fileID: 11400000, guid: a8313803acbe78949bd9558d9f88999b, type: 2}
   minRange: 1

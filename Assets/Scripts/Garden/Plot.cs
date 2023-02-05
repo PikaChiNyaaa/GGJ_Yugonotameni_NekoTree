@@ -56,37 +56,40 @@ public class Plot : MonoBehaviour
                     currTimeLapse = plant.plantStateSet.seedling.time;
                     break;
                 case Plant.PLANT_STATE_TYPE.GROWING:
-                    currTimeLapse = -1;
+                    currTimeLapse = plant.plantStateSet.growing.time;
                     break;
 
             }
         }
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        if (currTimeLapse > 0)
+        if (isWatered && plant != null)
         {
-            currTimeLapse -= Time.time;
-        }
-        else if (plant!= null && currPlantState != Plant.PLANT_STATE_TYPE.GROWN)
-        {
-            isWatered = false;
-            currTimeLapse = -1;
-
-            switch (currPlantState)
+            if (currTimeLapse > 0)
             {
-                case Plant.PLANT_STATE_TYPE.SEEDLING:
-                    plot.plantStates.seedling.SetActive(false);
-                    plot.plantStates.growing.SetActive(true);
-                    currPlantState = Plant.PLANT_STATE_TYPE.GROWING;
-                    break;
-                case Plant.PLANT_STATE_TYPE.GROWING:
-                    plot.plantStates.growing.SetActive(false);
-                    plot.plantStates.grown.SetActive(true);
-                    currPlantState = Plant.PLANT_STATE_TYPE.GROWN;
-                    break;
+                currTimeLapse -= Time.deltaTime;
+                Debug.Log(currTimeLapse.ToString());
+            }
+            else if (currTimeLapse <= 0 && currPlantState != Plant.PLANT_STATE_TYPE.GROWN)
+            {
+                isWatered = false;
 
+                switch (currPlantState)
+                {
+                    case Plant.PLANT_STATE_TYPE.SEEDLING:
+                        plot.plantStates.seedling.SetActive(false);
+                        plot.plantStates.growing.SetActive(true);
+                        currPlantState = Plant.PLANT_STATE_TYPE.GROWING;
+                        break;
+                    case Plant.PLANT_STATE_TYPE.GROWING:
+                        plot.plantStates.growing.SetActive(false);
+                        plot.plantStates.grown.SetActive(true);
+                        currPlantState = Plant.PLANT_STATE_TYPE.GROWN;
+                        break;
+
+                }
             }
         }
     }
